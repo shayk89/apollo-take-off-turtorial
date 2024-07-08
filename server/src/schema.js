@@ -6,6 +6,8 @@ type Query {
     tracksForHome: [Track!]!
     "Fetch a specific track, provided a track's ID"
     track(id: ID!): Track
+    "Fetch a specific Nodule, given the module's ID"
+    module(id:ID!): Module
 }
 
 type Mutation {
@@ -50,6 +52,10 @@ type Module {
     title: String!
     "The Module's length in minutes"
     length:Int
+    "The url to the Module's video"
+    videoUrl: String
+    "The module's text-based description content, can be in Markdown format. For videos, it will be the transcript"
+    content:String
 }
 
 "Author of a complete track"
